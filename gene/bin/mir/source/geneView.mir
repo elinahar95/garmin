@@ -1,0 +1,1092 @@
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Activity,1,14,22]; ]
+import Toybox.Activity;
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 7; @symbol_classdef = [geneView,7,6,14]; @symbol_extends<0> = [WatchUi,7,23,30]; @symbol_extends<1> = [DataField,7,31,40]; ]
+class geneView extends WatchUi.DataField {
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 7; ]
+    <init> {
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 24 16 ]
+        %tmp.2 = 10;
+        %tmp.1 = newa %tmp.2;
+        putv self :mAltBuf %tmp.1;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 25 16 ]
+        %tmp.4 = 10;
+        %tmp.3 = newa %tmp.4;
+        putv self :mDistBuf %tmp.3;
+    }
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 9; @position = 16; @symbol_vardef = [mPlannedPaceStr,9,16,31]; @symbol_type<0> = [String,9,35,41]; ]
+    private
+    var mPlannedPaceStr as String = "--:--";
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 10; @position = 16; @symbol_vardef = [mGapPaceStr,10,16,27]; @symbol_type<0> = [String,10,35,41]; ]
+    private
+    var mGapPaceStr as String = "--:--";
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 11; @position = 16; @symbol_vardef = [mCurrentPaceStr,11,16,31]; @symbol_type<0> = [String,11,35,41]; ]
+    private
+    var mCurrentPaceStr as String = "--:--";
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 12; @position = 16; @symbol_vardef = [mDeltaStr,12,16,25]; @symbol_type<0> = [String,12,35,41]; ]
+    private
+    var mDeltaStr as String = "+0s";
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 13; @position = 16; @symbol_vardef = [mGradeStr,13,16,25]; @symbol_type<0> = [String,13,35,41]; ]
+    private
+    var mGradeStr as String = "0%";
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 15; @position = 16; @symbol_vardef = [mTargetTimeSec,15,16,30]; @symbol_type<0> = [Float,15,34,39]; ]
+    private
+    var mTargetTimeSec as Float = 3600.0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 16; @position = 16; @symbol_vardef = [mRaceDistanceM,16,16,30]; @symbol_type<0> = [Float,16,34,39]; ]
+    private
+    var mRaceDistanceM as Float = 10000.0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 19; @position = 16; @symbol_vardef = [mPaceEma,19,16,24]; @symbol_type<0> = [Float,19,30,35]; ]
+    private
+    var mPaceEma as Float = 0.0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 20; @position = 16; @symbol_vardef = [mEmaReady,20,16,25]; @symbol_type<0> = [Boolean,20,30,37]; ]
+    private
+    var mEmaReady as Boolean = false;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 24; @position = 16; @symbol_vardef = [mAltBuf,24,16,23]; @symbol_type<0> = [Array,24,34,39]; ]
+    private
+    var mAltBuf as Array;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 25; @position = 16; @symbol_vardef = [mDistBuf,25,16,24]; @symbol_type<0> = [Array,25,34,39]; ]
+    private
+    var mDistBuf as Array;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 26; @position = 16; @symbol_vardef = [mBufIdx,26,16,23]; @symbol_type<0> = [Number,26,34,40]; ]
+    private
+    var mBufIdx as Number = 0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 27; @position = 16; @symbol_vardef = [mBufCount,27,16,25]; @symbol_type<0> = [Number,27,34,40]; ]
+    private
+    var mBufCount as Number = 0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 28; @position = 16; @symbol_vardef = [mLastSampleDist,28,16,31]; @symbol_type<0> = [Float,28,35,40]; ]
+    private
+    var mLastSampleDist as Float = -999.0;
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 30; @symbol_functiondef = [initialize,30,13,23]; ]
+    function initialize() as Void {
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 31 8 ]
+        symbol [ DataField %tmp.2 31 8 17 ];
+        %tmp.2 = getv ? :DataField;
+        symbol [ initialize %tmp.3 31 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 33 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_stop" ]
+        %t.1 = local;
+        symbol [ t %t.1 33 12 13 ];
+        symbol [ Application %tmp.4 33 16 27 ];
+        %tmp.4 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.5 33 28 38 ];
+        %tmp.5 = getv %tmp.4 :Properties;
+        symbol [ getValue %tmp.6 33 39 47 ];
+        %tmp.6 = getv function %tmp.5 :getValue;
+        %tmp.7 = "targetTimeSec";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        lputv %t.1 %tmp.8;
+        symbol [ t %t.1 33 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 34 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_stop" ]
+        %d.2 = local;
+        symbol [ d %d.2 34 12 13 ];
+        symbol [ Application %tmp.9 34 16 27 ];
+        %tmp.9 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.10 34 28 38 ];
+        %tmp.10 = getv %tmp.9 :Properties;
+        symbol [ getValue %tmp.11 34 39 47 ];
+        %tmp.11 = getv function %tmp.10 :getValue;
+        %tmp.12 = "raceDistanceM";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        lputv %d.2 %tmp.13;
+        symbol [ d %d.2 34 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 35 8 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_8_35_67_if_stmt:
+        %tmp.14 = lgetv %t.1;
+        symbol [ t %tmp.14 35 12 13 ];
+        %tmp.15 = null;
+        %tmp.16 = ne %tmp.14 %tmp.15;
+        bf %tmp.16 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_8_35_67_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_8_35_67_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_23_35_67_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 35 25 ]
+        %tmp.17 = lgetv %t.1;
+        symbol [ t %tmp.17 35 43 44 ];
+        %tmp.18 = as %tmp.17 { (!Null) };
+        %tmp.19 = as %tmp.18 Number;
+        symbol [ Number %tmp.19 35 48 54 ];
+        symbol [ toFloat %tmp.20 35 56 63 ];
+        %tmp.20 = getv function %tmp.19 :toFloat;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        symbol [ mTargetTimeSec ? 35 25 39 ];
+        putv self :mTargetTimeSec %tmp.21;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_23_35_67_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_8_35_67_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_35_8_35_67_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 36 8 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_8_36_67_if_stmt:
+        %tmp.22 = lgetv %d.2;
+        symbol [ d %tmp.22 36 12 13 ];
+        %tmp.23 = null;
+        %tmp.24 = ne %tmp.22 %tmp.23;
+        bf %tmp.24 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_8_36_67_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_8_36_67_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_23_36_67_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 36 25 ]
+        %tmp.25 = lgetv %d.2;
+        symbol [ d %tmp.25 36 43 44 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        %tmp.27 = as %tmp.26 Number;
+        symbol [ Number %tmp.27 36 48 54 ];
+        symbol [ toFloat %tmp.28 36 56 63 ];
+        %tmp.28 = getv function %tmp.27 :toFloat;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        symbol [ mRaceDistanceM ? 36 25 39 ];
+        putv self :mRaceDistanceM %tmp.29;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_23_36_67_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_8_36_67_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_36_8_36_67_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 38 8 ]
+        %tmp.30 = self;
+        symbol [ paceStr %tmp.31 38 26 33 ];
+        %tmp.31 = getv function %tmp.30 :paceStr;
+        symbol [ mTargetTimeSec %tmp.33 38 34 48 ];
+        %tmp.33 = getv ? :mTargetTimeSec;
+        symbol [ mRaceDistanceM %tmp.35 38 51 65 ];
+        %tmp.35 = getv ? :mRaceDistanceM;
+        %tmp.36 = div %tmp.33 %tmp.35;
+        %tmp.37 = 1609.344;
+        %tmp.38 = mul %tmp.36 %tmp.37;
+        %tmp.39 = invoke %tmp.30 %tmp.31(%tmp.38);
+        symbol [ mPlannedPaceStr ? 38 8 23 ];
+        putv self :mPlannedPaceStr %tmp.39;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 40 8 ]
+        for @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_test @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_incr @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_init:
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_begin" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 40 17 18 ];
+        %tmp.40 = 0;
+        lputv %i.3 %tmp.40;
+        symbol [ i %i.3 40 17 18 ];
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_test:
+        %tmp.41 = lgetv %i.3;
+        symbol [ i %tmp.41 40 24 25 ];
+        %tmp.42 = 10;
+        %tmp.43 = lt %tmp.41 %tmp.42;
+        bf %tmp.43 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_begin:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_37_43_8_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 41 12 ]
+        symbol [ mAltBuf %tmp.44 41 12 19 ];
+        %tmp.44 = getv self :mAltBuf;
+        %tmp.45 = 0.0;
+        %tmp.46 = lgetv %i.3;
+        symbol [ i %tmp.46 41 20 21 ];
+        aputv %tmp.44 %tmp.46 %tmp.45;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 42 12 ]
+        symbol [ mDistBuf %tmp.47 42 12 20 ];
+        %tmp.47 = getv self :mDistBuf;
+        %tmp.48 = 0.0;
+        %tmp.49 = lgetv %i.3;
+        symbol [ i %tmp.49 42 21 22 ];
+        aputv %tmp.47 %tmp.49 %tmp.48;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_37_43_8_stop:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_incr:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 40 ]
+        %tmp.52 = lgetv %i.3;
+        symbol [ i %tmp.52 40 32 33 ];
+        %tmp.53 = add %tmp.52 1;
+        lputv %i.3 %tmp.53;
+        symbol [ i %i.3 40 32 33 ];
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_test;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_40_8_43_8_for_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 44 8 ]
+        %tmp.54 = -999.0;
+        symbol [ mLastSampleDist ? 44 8 23 ];
+        putv self :mLastSampleDist %tmp.54;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_30_26_45_4_stop:
+    }
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 47; @symbol_functiondef = [compute,47,13,20]; @symbol_param<0> = [info,47,21,25]; @symbol_param<0>_type<0> = [Activity,47,29,37]; @symbol_param<0>_type<1> = [Info,47,38,42]; ]
+    function compute(info as Activity.Info) as Void {
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 49 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_stop" ]
+        %speed.1 = local;
+        symbol [ speed %speed.1 49 12 17 ];
+        %tmp.1 = lgetv %info;
+        symbol [ info %tmp.1 49 20 24 ];
+        symbol [ currentSpeed %tmp.2 49 25 37 ];
+        %tmp.2 = getv %tmp.1 :currentSpeed;
+        lputv %speed.1 %tmp.2;
+        symbol [ speed %speed.1 49 12 17 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 50 8 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_stmt:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_12_50_37_begin:
+        %tmp.3 = lgetv %speed.1;
+        symbol [ speed %tmp.3 50 12 17 ];
+        %tmp.4 = null;
+        %tmp.5 = ne %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_29_50_37_true:
+        %tmp.6 = lgetv %speed.1;
+        symbol [ speed %tmp.6 50 29 34 ];
+        %tmp.7 = as %tmp.6 { (!Null) };
+        %tmp.8 = 0.5;
+        %tmp.9 = gt %tmp.7 %tmp.8;
+        push %tmp.9;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_29_50_37_end:
+        %tmp.10 = phi [%tmp.5 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_12_50_37_begin] [%tmp.9 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_29_50_37_true] [%tmp.10 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_29_50_37_end];
+        bf %tmp.10 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_42_55_8_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 51 12 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_42_55_8_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_42_55_8_stop" ]
+        %raw.2 = local;
+        symbol [ raw %raw.2 51 16 19 ];
+        %tmp.11 = 1609.344;
+        %tmp.12 = lgetv %speed.1;
+        symbol [ speed %tmp.12 51 33 38 ];
+        %tmp.13 = as %tmp.12 { (!Null) };
+        %tmp.14 = div %tmp.11 %tmp.13;
+        lputv %raw.2 %tmp.14;
+        symbol [ raw %raw.2 51 16 19 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 52 12 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_begin:
+        symbol [ mEmaReady %tmp.16 52 24 33 ];
+        %tmp.16 = getv ? :mEmaReady;
+        bf %tmp.16 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_true:
+        %tmp.17 = 0.2;
+        %tmp.18 = lgetv %raw.2;
+        symbol [ raw %tmp.18 52 42 45 ];
+        %tmp.19 = mul %tmp.17 %tmp.18;
+        %tmp.20 = 0.8;
+        symbol [ mPaceEma %tmp.22 52 54 62 ];
+        %tmp.22 = getv ? :mPaceEma;
+        %tmp.23 = mul %tmp.20 %tmp.22;
+        %tmp.24 = add %tmp.19 %tmp.23;
+        push %tmp.24;
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_else_false:
+        %tmp.25 = lgetv %raw.2;
+        symbol [ raw %tmp.25 52 65 68 ];
+        push %tmp.25;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_end:
+        %tmp.26 = phi [%tmp.16 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_begin] [%tmp.24 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_true] [%tmp.25 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_else_false] [%tmp.26 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_52_24_52_65_end];
+        symbol [ mPaceEma ? 52 12 20 ];
+        putv self :mPaceEma %tmp.26;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 53 12 ]
+        %tmp.27 = true;
+        symbol [ mEmaReady ? 53 12 21 ];
+        putv self :mEmaReady %tmp.27;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 54 12 ]
+        %tmp.28 = self;
+        symbol [ paceStr %tmp.29 54 30 37 ];
+        %tmp.29 = getv function %tmp.28 :paceStr;
+        symbol [ mPaceEma %tmp.31 54 38 46 ];
+        %tmp.31 = getv ? :mPaceEma;
+        %tmp.32 = invoke %tmp.28 %tmp.29(%tmp.31);
+        symbol [ mCurrentPaceStr ? 54 12 27 ];
+        putv self :mCurrentPaceStr %tmp.32;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_42_55_8_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_else_false:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_55_15_57_8_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 56 12 ]
+        %tmp.33 = "--:--";
+        symbol [ mCurrentPaceStr ? 56 12 27 ];
+        putv self :mCurrentPaceStr %tmp.33;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_55_15_57_8_stop:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_50_8_57_8_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 60 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_stop" ]
+        %dist.3 = local;
+        symbol [ dist %dist.3 60 12 16 ];
+        %tmp.34 = lgetv %info;
+        symbol [ info %tmp.34 60 20 24 ];
+        symbol [ elapsedDistance %tmp.35 60 25 40 ];
+        %tmp.35 = getv %tmp.34 :elapsedDistance;
+        lputv %dist.3 %tmp.35;
+        symbol [ dist %dist.3 60 12 16 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 61 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_stop" ]
+        %timer.4 = local;
+        symbol [ timer %timer.4 61 12 17 ];
+        %tmp.36 = lgetv %info;
+        symbol [ info %tmp.36 61 20 24 ];
+        symbol [ timerTime %tmp.37 61 25 34 ];
+        %tmp.37 = getv %tmp.36 :timerTime;
+        lputv %timer.4 %tmp.37;
+        symbol [ timer %timer.4 61 12 17 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 62 8 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_stmt:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_12_62_53_begin:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_12_62_37_begin:
+        %tmp.38 = lgetv %dist.3;
+        symbol [ dist %tmp.38 62 12 16 ];
+        %tmp.39 = null;
+        %tmp.40 = ne %tmp.38 %tmp.39;
+        bf %tmp.40 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_28_62_37_true:
+        %tmp.41 = lgetv %timer.4;
+        symbol [ timer %tmp.41 62 28 33 ];
+        %tmp.42 = null;
+        %tmp.43 = ne %tmp.41 %tmp.42;
+        push %tmp.43;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_28_62_37_end:
+        %tmp.44 = phi [%tmp.40 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_12_62_37_begin] [%tmp.43 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_28_62_37_true] [%tmp.44 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_28_62_37_end];
+        bf %tmp.44 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_45_62_53_true:
+        %tmp.45 = lgetv %timer.4;
+        symbol [ timer %tmp.45 62 45 50 ];
+        %tmp.46 = as %tmp.45 { (!Null) };
+        %tmp.47 = 0;
+        %tmp.48 = gt %tmp.46 %tmp.47;
+        push %tmp.48;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_45_62_53_end:
+        %tmp.49 = phi [%tmp.44 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_12_62_53_begin] [%tmp.48 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_45_62_53_true] [%tmp.49 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_45_62_53_end];
+        bf %tmp.49 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 63 12 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_stop" ]
+        %elapsedSec.5 = local;
+        symbol [ elapsedSec %elapsedSec.5 63 16 26 ];
+        %tmp.50 = lgetv %timer.4;
+        symbol [ timer %tmp.50 63 30 35 ];
+        %tmp.51 = as %tmp.50 { (!Null) };
+        symbol [ toFloat %tmp.52 63 36 43 ];
+        %tmp.52 = getv function %tmp.51 :toFloat;
+        %tmp.53 = invoke %tmp.51 %tmp.52();
+        %tmp.54 = 1000.0;
+        %tmp.55 = div %tmp.53 %tmp.54;
+        lputv %elapsedSec.5 %tmp.55;
+        symbol [ elapsedSec %elapsedSec.5 63 16 26 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 64 12 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_stop" ]
+        %expectedDist.6 = local;
+        symbol [ expectedDist %expectedDist.6 64 16 28 ];
+        %tmp.56 = lgetv %elapsedSec.5;
+        symbol [ elapsedSec %tmp.56 64 31 41 ];
+        symbol [ mRaceDistanceM %tmp.58 64 44 58 ];
+        %tmp.58 = getv ? :mRaceDistanceM;
+        %tmp.59 = mul %tmp.56 %tmp.58;
+        symbol [ mTargetTimeSec %tmp.61 64 61 75 ];
+        %tmp.61 = getv ? :mTargetTimeSec;
+        %tmp.62 = div %tmp.59 %tmp.61;
+        lputv %expectedDist.6 %tmp.62;
+        symbol [ expectedDist %expectedDist.6 64 16 28 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 65 12 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_stop" ]
+        %deltaSec.7 = local;
+        symbol [ deltaSec %deltaSec.7 65 16 24 ];
+        %tmp.63 = lgetv %dist.3;
+        symbol [ dist %tmp.63 65 32 36 ];
+        %tmp.64 = as %tmp.63 { (!Null) };
+        %tmp.65 = lgetv %expectedDist.6;
+        symbol [ expectedDist %tmp.65 65 39 51 ];
+        %tmp.66 = sub %tmp.64 %tmp.65;
+        symbol [ mTargetTimeSec %tmp.68 65 55 69 ];
+        %tmp.68 = getv ? :mTargetTimeSec;
+        %tmp.69 = mul %tmp.66 %tmp.68;
+        symbol [ mRaceDistanceM %tmp.71 65 72 86 ];
+        %tmp.71 = getv ? :mRaceDistanceM;
+        %tmp.72 = div %tmp.69 %tmp.71;
+        lputv %deltaSec.7 %tmp.72;
+        symbol [ deltaSec %deltaSec.7 65 16 24 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 66 12 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_stop" ]
+        %dInt.8 = local;
+        symbol [ dInt %dInt.8 66 16 20 ];
+        %tmp.73 = lgetv %deltaSec.7;
+        symbol [ deltaSec %tmp.73 66 23 31 ];
+        symbol [ toNumber %tmp.74 66 32 40 ];
+        %tmp.74 = getv function %tmp.73 :toNumber;
+        %tmp.75 = invoke %tmp.73 %tmp.74();
+        lputv %dInt.8 %tmp.75;
+        symbol [ dInt %dInt.8 66 16 20 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 67 12 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_begin:
+        %tmp.76 = lgetv %dInt.8;
+        symbol [ dInt %tmp.76 67 25 29 ];
+        %tmp.77 = 0;
+        %tmp.78 = gte %tmp.76 %tmp.77;
+        bf %tmp.78 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_true:
+        %tmp.79 = "+";
+        push %tmp.79;
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_else_false:
+        %tmp.80 = "";
+        push %tmp.80;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_end:
+        %tmp.81 = phi [%tmp.78 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_begin] [%tmp.79 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_true] [%tmp.80 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_else_false] [%tmp.81 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_67_25_67_43_end];
+        %tmp.82 = lgetv %dInt.8;
+        symbol [ dInt %tmp.82 67 49 53 ];
+        symbol [ format %tmp.83 67 54 60 ];
+        %tmp.83 = getv function %tmp.82 :format;
+        %tmp.84 = "%d";
+        %tmp.85 = invoke %tmp.82 %tmp.83(%tmp.84);
+        %tmp.86 = add %tmp.81 %tmp.85;
+        %tmp.87 = "s";
+        %tmp.88 = add %tmp.86 %tmp.87;
+        symbol [ mDeltaStr ? 67 12 21 ];
+        putv self :mDeltaStr %tmp.88;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_56_68_8_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_62_8_68_8_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 71 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_stop" ]
+        %alt.9 = local;
+        symbol [ alt %alt.9 71 12 15 ];
+        %tmp.89 = lgetv %info;
+        symbol [ info %tmp.89 71 18 22 ];
+        symbol [ altitude %tmp.90 71 23 31 ];
+        %tmp.90 = getv %tmp.89 :altitude;
+        lputv %alt.9 %tmp.90;
+        symbol [ alt %alt.9 71 12 15 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 72 8 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_stmt:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_12_72_71_begin:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_12_72_35_begin:
+        %tmp.91 = lgetv %alt.9;
+        symbol [ alt %tmp.91 72 12 15 ];
+        %tmp.92 = null;
+        %tmp.93 = ne %tmp.91 %tmp.92;
+        bf %tmp.93 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_27_72_35_true:
+        %tmp.94 = lgetv %dist.3;
+        symbol [ dist %tmp.94 72 27 31 ];
+        %tmp.95 = null;
+        %tmp.96 = ne %tmp.94 %tmp.95;
+        push %tmp.96;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_27_72_35_end:
+        %tmp.97 = phi [%tmp.93 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_12_72_35_begin] [%tmp.96 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_27_72_35_true] [%tmp.97 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_27_72_35_end];
+        bf %tmp.97 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_43_72_71_true:
+        %tmp.98 = lgetv %dist.3;
+        symbol [ dist %tmp.98 72 44 48 ];
+        %tmp.99 = as %tmp.98 { (!Null) };
+        symbol [ mLastSampleDist %tmp.101 72 51 66 ];
+        %tmp.101 = getv ? :mLastSampleDist;
+        %tmp.102 = sub %tmp.99 %tmp.101;
+        %tmp.103 = 5.0;
+        %tmp.104 = gte %tmp.102 %tmp.103;
+        push %tmp.104;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_43_72_71_end:
+        %tmp.105 = phi [%tmp.97 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_12_72_71_begin] [%tmp.104 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_43_72_71_true] [%tmp.105 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_43_72_71_end];
+        bf %tmp.105 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_76_105_8_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 73 12 ]
+        symbol [ mAltBuf %tmp.106 73 12 19 ];
+        %tmp.106 = getv self :mAltBuf;
+        %tmp.107 = lgetv %alt.9;
+        symbol [ alt %tmp.107 73 32 35 ];
+        %tmp.108 = as %tmp.107 { (!Null) };
+        symbol [ mBufIdx %tmp.110 73 20 27 ];
+        %tmp.110 = getv ? :mBufIdx;
+        aputv %tmp.106 %tmp.110 %tmp.108;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 74 12 ]
+        symbol [ mDistBuf %tmp.111 74 12 20 ];
+        %tmp.111 = getv self :mDistBuf;
+        %tmp.112 = lgetv %dist.3;
+        symbol [ dist %tmp.112 74 32 36 ];
+        %tmp.113 = as %tmp.112 { (!Null) };
+        symbol [ mBufIdx %tmp.115 74 21 28 ];
+        %tmp.115 = getv ? :mBufIdx;
+        aputv %tmp.111 %tmp.115 %tmp.113;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 75 12 ]
+        %tmp.116 = lgetv %dist.3;
+        symbol [ dist %tmp.116 75 32 36 ];
+        %tmp.117 = as %tmp.116 { (!Null) };
+        symbol [ mLastSampleDist ? 75 12 27 ];
+        putv self :mLastSampleDist %tmp.117;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 76 12 ]
+        symbol [ mBufIdx %tmp.119 76 25 32 ];
+        %tmp.119 = getv ? :mBufIdx;
+        %tmp.120 = 1;
+        %tmp.121 = add %tmp.119 %tmp.120;
+        %tmp.122 = 10;
+        %tmp.123 = mod %tmp.121 %tmp.122;
+        symbol [ mBufIdx ? 76 12 19 ];
+        putv self :mBufIdx %tmp.123;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 77 12 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_12_77_47_if_stmt:
+        symbol [ mBufCount %tmp.125 77 16 25 ];
+        %tmp.125 = getv ? :mBufCount;
+        %tmp.126 = 10;
+        %tmp.127 = lt %tmp.125 %tmp.126;
+        bf %tmp.127 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_12_77_47_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_12_77_47_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_32_77_47_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 77 34 ]
+        symbol [ mBufCount %tmp.130 77 34 43 ];
+        %tmp.130 = getv ? :mBufCount;
+        %tmp.131 = add %tmp.130 1;
+        symbol [ mBufCount ? 77 34 43 ];
+        putv self :mBufCount dup %tmp.131;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_32_77_47_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_12_77_47_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_77_12_77_47_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 79 12 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_stmt:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_16_79_34_begin:
+        symbol [ mBufCount %tmp.133 79 16 25 ];
+        %tmp.133 = getv ? :mBufCount;
+        %tmp.134 = 2;
+        %tmp.135 = gte %tmp.133 %tmp.134;
+        bf %tmp.135 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_34_79_34_true:
+        symbol [ mEmaReady %tmp.137 79 34 43 ];
+        %tmp.137 = getv ? :mEmaReady;
+        push %tmp.137;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_34_79_34_end:
+        %tmp.138 = phi [%tmp.135 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_16_79_34_begin] [%tmp.137 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_34_79_34_true] [%tmp.138 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_34_79_34_end];
+        bf %tmp.138 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 80 16 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_stop" ]
+        %newestIdx.10 = local;
+        symbol [ newestIdx %newestIdx.10 80 20 29 ];
+        symbol [ mBufIdx %tmp.140 80 33 40 ];
+        %tmp.140 = getv ? :mBufIdx;
+        %tmp.141 = 1;
+        %tmp.142 = sub %tmp.140 %tmp.141;
+        %tmp.143 = 10;
+        %tmp.144 = add %tmp.142 %tmp.143;
+        %tmp.145 = 10;
+        %tmp.146 = mod %tmp.144 %tmp.145;
+        lputv %newestIdx.10 %tmp.146;
+        symbol [ newestIdx %newestIdx.10 80 20 29 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 81 16 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_stop" ]
+        %oldestIdx.11 = local;
+        symbol [ oldestIdx %oldestIdx.11 81 20 29 ];
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_begin:
+        symbol [ mBufCount %tmp.148 81 32 41 ];
+        %tmp.148 = getv ? :mBufCount;
+        %tmp.149 = 10;
+        %tmp.150 = lt %tmp.148 %tmp.149;
+        bf %tmp.150 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_true:
+        %tmp.151 = 0;
+        push %tmp.151;
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_else_false:
+        symbol [ mBufIdx %tmp.153 81 53 60 ];
+        %tmp.153 = getv ? :mBufIdx;
+        push %tmp.153;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_end:
+        %tmp.154 = phi [%tmp.150 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_begin] [%tmp.151 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_true] [%tmp.153 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_else_false] [%tmp.154 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_81_32_81_53_end];
+        lputv %oldestIdx.11 %tmp.154;
+        symbol [ oldestIdx %oldestIdx.11 81 20 29 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 83 16 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_stop" ]
+        %deltaAlt.12 = local;
+        symbol [ deltaAlt %deltaAlt.12 83 20 28 ];
+        symbol [ mAltBuf %tmp.156 83 33 40 ];
+        %tmp.156 = getv ? :mAltBuf;
+        %tmp.157 = lgetv %newestIdx.10;
+        symbol [ newestIdx %tmp.157 83 41 50 ];
+        %tmp.158 = agetv %tmp.156 %tmp.157;
+        %tmp.159 = as %tmp.158 Float;
+        symbol [ Float %tmp.159 83 56 61 ];
+        symbol [ mAltBuf %tmp.161 83 66 73 ];
+        %tmp.161 = getv ? :mAltBuf;
+        %tmp.162 = lgetv %oldestIdx.11;
+        symbol [ oldestIdx %tmp.162 83 74 83 ];
+        %tmp.163 = agetv %tmp.161 %tmp.162;
+        %tmp.164 = as %tmp.163 Float;
+        symbol [ Float %tmp.164 83 89 94 ];
+        %tmp.165 = sub %tmp.159 %tmp.164;
+        lputv %deltaAlt.12 %tmp.165;
+        symbol [ deltaAlt %deltaAlt.12 83 20 28 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 84 16 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_stop" ]
+        %deltaDist.13 = local;
+        symbol [ deltaDist %deltaDist.13 84 20 29 ];
+        symbol [ mDistBuf %tmp.167 84 33 41 ];
+        %tmp.167 = getv ? :mDistBuf;
+        %tmp.168 = lgetv %newestIdx.10;
+        symbol [ newestIdx %tmp.168 84 42 51 ];
+        %tmp.169 = agetv %tmp.167 %tmp.168;
+        %tmp.170 = as %tmp.169 Float;
+        symbol [ Float %tmp.170 84 56 61 ];
+        symbol [ mDistBuf %tmp.172 84 66 74 ];
+        %tmp.172 = getv ? :mDistBuf;
+        %tmp.173 = lgetv %oldestIdx.11;
+        symbol [ oldestIdx %tmp.173 84 75 84 ];
+        %tmp.174 = agetv %tmp.172 %tmp.173;
+        %tmp.175 = as %tmp.174 Float;
+        symbol [ Float %tmp.175 84 89 94 ];
+        %tmp.176 = sub %tmp.170 %tmp.175;
+        lputv %deltaDist.13 %tmp.176;
+        symbol [ deltaDist %deltaDist.13 84 20 29 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 86 16 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_16_103_16_if_stmt:
+        %tmp.177 = lgetv %deltaDist.13;
+        symbol [ deltaDist %tmp.177 86 20 29 ];
+        %tmp.178 = 1.0;
+        %tmp.179 = gt %tmp.177 %tmp.178;
+        bf %tmp.179 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_16_103_16_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_16_103_16_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 87 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %grade.14 = local;
+        symbol [ grade %grade.14 87 24 29 ];
+        %tmp.180 = lgetv %deltaAlt.12;
+        symbol [ deltaAlt %tmp.180 87 32 40 ];
+        %tmp.181 = lgetv %deltaDist.13;
+        symbol [ deltaDist %tmp.181 87 43 52 ];
+        %tmp.182 = div %tmp.180 %tmp.181;
+        lputv %grade.14 %tmp.182;
+        symbol [ grade %grade.14 87 24 29 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 88 20 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_20_88_56_if_stmt:
+        %tmp.183 = lgetv %grade.14;
+        symbol [ grade %tmp.183 88 24 29 ];
+        %tmp.184 = 0.30;
+        %tmp.185 = gt %tmp.183 %tmp.184;
+        bf %tmp.185 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_20_88_56_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_20_88_56_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_39_88_56_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 88 41 ]
+        %tmp.186 = 0.30;
+        lputv %grade.14 %tmp.186;
+        symbol [ grade %grade.14 88 41 46 ];
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_39_88_56_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_20_88_56_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_88_20_88_56_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 89 20 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_20_89_56_if_stmt:
+        %tmp.187 = lgetv %grade.14;
+        symbol [ grade %tmp.187 89 24 29 ];
+        %tmp.188 = -0.30;
+        %tmp.189 = lt %tmp.187 %tmp.188;
+        bf %tmp.189 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_20_89_56_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_20_89_56_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_39_89_56_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 89 41 ]
+        %tmp.190 = -0.30;
+        lputv %grade.14 %tmp.190;
+        symbol [ grade %grade.14 89 41 46 ];
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_39_89_56_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_20_89_56_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_89_20_89_56_if_end:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 91 20 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_begin:
+        %tmp.191 = lgetv %grade.14;
+        symbol [ grade %tmp.191 91 33 38 ];
+        %tmp.192 = 0;
+        %tmp.193 = gte %tmp.191 %tmp.192;
+        bf %tmp.193 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_else_false;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_true:
+        %tmp.194 = "+";
+        push %tmp.194;
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_else_false:
+        %tmp.195 = "";
+        push %tmp.195;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_end:
+        %tmp.196 = phi [%tmp.193 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_begin] [%tmp.194 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_true] [%tmp.195 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_else_false] [%tmp.196 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_91_33_91_52_end];
+        %tmp.197 = lgetv %grade.14;
+        symbol [ grade %tmp.197 91 59 64 ];
+        %tmp.198 = 100;
+        %tmp.199 = mul %tmp.197 %tmp.198;
+        symbol [ toNumber %tmp.200 91 72 80 ];
+        %tmp.200 = getv function %tmp.199 :toNumber;
+        %tmp.201 = invoke %tmp.199 %tmp.200();
+        symbol [ format %tmp.202 91 83 89 ];
+        %tmp.202 = getv function %tmp.201 :format;
+        %tmp.203 = "%d";
+        %tmp.204 = invoke %tmp.201 %tmp.202(%tmp.203);
+        %tmp.205 = add %tmp.196 %tmp.204;
+        %tmp.206 = "%";
+        %tmp.207 = add %tmp.205 %tmp.206;
+        symbol [ mGradeStr ? 91 20 29 ];
+        putv self :mGradeStr %tmp.207;
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 94 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %i2.15 = local;
+        symbol [ i2 %i2.15 94 24 26 ];
+        %tmp.208 = lgetv %grade.14;
+        symbol [ grade %tmp.208 94 29 34 ];
+        %tmp.209 = lgetv %grade.14;
+        symbol [ grade %tmp.209 94 37 42 ];
+        %tmp.210 = mul %tmp.208 %tmp.209;
+        lputv %i2.15 %tmp.210;
+        symbol [ i2 %i2.15 94 24 26 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 95 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %i3.16 = local;
+        symbol [ i3 %i3.16 95 24 26 ];
+        %tmp.211 = lgetv %i2.15;
+        symbol [ i2 %tmp.211 95 29 31 ];
+        %tmp.212 = lgetv %grade.14;
+        symbol [ grade %tmp.212 95 34 39 ];
+        %tmp.213 = mul %tmp.211 %tmp.212;
+        lputv %i3.16 %tmp.213;
+        symbol [ i3 %i3.16 95 24 26 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 96 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %i4.17 = local;
+        symbol [ i4 %i4.17 96 24 26 ];
+        %tmp.214 = lgetv %i3.16;
+        symbol [ i3 %tmp.214 96 29 31 ];
+        %tmp.215 = lgetv %grade.14;
+        symbol [ grade %tmp.215 96 34 39 ];
+        %tmp.216 = mul %tmp.214 %tmp.215;
+        lputv %i4.17 %tmp.216;
+        symbol [ i4 %i4.17 96 24 26 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 97 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %i5.18 = local;
+        symbol [ i5 %i5.18 97 24 26 ];
+        %tmp.217 = lgetv %i4.17;
+        symbol [ i4 %tmp.217 97 29 31 ];
+        %tmp.218 = lgetv %grade.14;
+        symbol [ grade %tmp.218 97 34 39 ];
+        %tmp.219 = mul %tmp.217 %tmp.218;
+        lputv %i5.18 %tmp.219;
+        symbol [ i5 %i5.18 97 24 26 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 98 20 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop" ]
+        %c.19 = local;
+        symbol [ c %c.19 98 24 25 ];
+        %tmp.220 = 155.4;
+        %tmp.221 = lgetv %i5.18;
+        symbol [ i5 %tmp.221 98 35 37 ];
+        %tmp.222 = mul %tmp.220 %tmp.221;
+        %tmp.223 = 30.4;
+        %tmp.224 = lgetv %i4.17;
+        symbol [ i4 %tmp.224 98 45 47 ];
+        %tmp.225 = mul %tmp.223 %tmp.224;
+        %tmp.226 = sub %tmp.222 %tmp.225;
+        %tmp.227 = 43.3;
+        %tmp.228 = lgetv %i3.16;
+        symbol [ i3 %tmp.228 98 55 57 ];
+        %tmp.229 = mul %tmp.227 %tmp.228;
+        %tmp.230 = sub %tmp.226 %tmp.229;
+        %tmp.231 = 46.3;
+        %tmp.232 = lgetv %i2.15;
+        symbol [ i2 %tmp.232 98 65 67 ];
+        %tmp.233 = mul %tmp.231 %tmp.232;
+        %tmp.234 = add %tmp.230 %tmp.233;
+        %tmp.235 = 19.5;
+        %tmp.236 = lgetv %grade.14;
+        symbol [ grade %tmp.236 98 75 80 ];
+        %tmp.237 = mul %tmp.235 %tmp.236;
+        %tmp.238 = add %tmp.234 %tmp.237;
+        %tmp.239 = 3.6;
+        %tmp.240 = add %tmp.238 %tmp.239;
+        lputv %c.19 %tmp.240;
+        symbol [ c %c.19 98 24 25 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 100 20 ]
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_20_102_20_if_stmt:
+        %tmp.241 = lgetv %c.19;
+        symbol [ c %tmp.241 100 24 25 ];
+        %tmp.242 = 0.0;
+        %tmp.243 = gt %tmp.241 %tmp.242;
+        bf %tmp.243 @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_20_102_20_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_20_102_20_if_true:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_33_102_20_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 101 24 ]
+        %tmp.244 = self;
+        symbol [ paceStr %tmp.245 101 38 45 ];
+        %tmp.245 = getv function %tmp.244 :paceStr;
+        symbol [ mPaceEma %tmp.247 101 46 54 ];
+        %tmp.247 = getv ? :mPaceEma;
+        %tmp.248 = 3.6;
+        %tmp.249 = mul %tmp.247 %tmp.248;
+        %tmp.250 = lgetv %c.19;
+        symbol [ c %tmp.250 101 63 64 ];
+        %tmp.251 = div %tmp.249 %tmp.250;
+        %tmp.252 = invoke %tmp.244 %tmp.245(%tmp.251);
+        symbol [ mGapPaceStr ? 101 24 35 ];
+        putv self :mGapPaceStr %tmp.252;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_33_102_20_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_20_102_20_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_100_20_102_20_if_end:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_37_103_16_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_16_103_16_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_86_16_103_16_if_end:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_45_104_12_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_79_12_104_12_if_end:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_76_105_8_stop:
+        goto @_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_end;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_72_8_105_8_if_end:
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_47_52_106_4_stop:
+    }
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 108; @symbol_functiondef = [onUpdate,108,13,21]; @symbol_param<0> = [dc,108,22,24]; @symbol_param<0>_type<0> = [Dc,108,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 109 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 109 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 109 16 18 ];
+        symbol [ getWidth %tmp.2 109 19 27 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 109 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 110 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 110 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 110 16 18 ];
+        symbol [ getHeight %tmp.5 110 19 28 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 110 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 112 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 112 8 10 ];
+        symbol [ setColor %tmp.8 112 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        symbol [ Graphics %tmp.9 112 20 28 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.10 112 29 46 ];
+        %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
+        symbol [ Graphics %tmp.11 112 48 56 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.12 112 57 68 ];
+        %tmp.12 = getv %tmp.11 :COLOR_BLACK;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 113 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 113 8 10 ];
+        symbol [ clear %tmp.14 113 11 16 ];
+        %tmp.14 = getv function %tmp.13 :clear;
+        invoke %tmp.13 %tmp.14();
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 114 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 114 8 10 ];
+        symbol [ setColor %tmp.16 114 11 19 ];
+        %tmp.16 = getv function %tmp.15 :setColor;
+        symbol [ Graphics %tmp.17 114 20 28 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.18 114 29 40 ];
+        %tmp.18 = getv %tmp.17 :COLOR_WHITE;
+        symbol [ Graphics %tmp.19 114 42 50 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.20 114 51 68 ];
+        %tmp.20 = getv %tmp.19 :COLOR_TRANSPARENT;
+        invoke %tmp.15 %tmp.16(%tmp.18, %tmp.20);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 117 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 117 8 10 ];
+        symbol [ drawText %tmp.22 117 11 19 ];
+        %tmp.22 = getv function %tmp.21 :drawText;
+        %tmp.23 = lgetv %w.1;
+        symbol [ w %tmp.23 117 20 21 ];
+        %tmp.24 = 2;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        %tmp.26 = lgetv %h.2;
+        symbol [ h %tmp.26 117 27 28 ];
+        %tmp.27 = 0.03;
+        %tmp.28 = mul %tmp.26 %tmp.27;
+        symbol [ Graphics %tmp.29 117 37 45 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.30 117 46 55 ];
+        %tmp.30 = getv %tmp.29 :FONT_TINY;
+        %tmp.31 = "target";
+        symbol [ Graphics %tmp.32 117 76 84 ];
+        %tmp.32 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.33 117 85 104 ];
+        %tmp.33 = getv %tmp.32 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.21 %tmp.22(%tmp.25, %tmp.28, %tmp.30, %tmp.31, %tmp.33);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 118 8 ]
+        %tmp.34 = lgetv %dc;
+        symbol [ dc %tmp.34 118 8 10 ];
+        symbol [ drawText %tmp.35 118 11 19 ];
+        %tmp.35 = getv function %tmp.34 :drawText;
+        %tmp.36 = lgetv %w.1;
+        symbol [ w %tmp.36 118 20 21 ];
+        %tmp.37 = 2;
+        %tmp.38 = div %tmp.36 %tmp.37;
+        %tmp.39 = lgetv %h.2;
+        symbol [ h %tmp.39 118 27 28 ];
+        %tmp.40 = 0.14;
+        %tmp.41 = mul %tmp.39 %tmp.40;
+        symbol [ Graphics %tmp.42 118 37 45 ];
+        %tmp.42 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.43 118 46 57 ];
+        %tmp.43 = getv %tmp.42 :FONT_MEDIUM;
+        symbol [ mPlannedPaceStr %tmp.45 118 59 74 ];
+        %tmp.45 = getv ? :mPlannedPaceStr;
+        symbol [ Graphics %tmp.46 118 76 84 ];
+        %tmp.46 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.47 118 85 104 ];
+        %tmp.47 = getv %tmp.46 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.34 %tmp.35(%tmp.38, %tmp.41, %tmp.43, %tmp.45, %tmp.47);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 121 8 ]
+        %tmp.48 = lgetv %dc;
+        symbol [ dc %tmp.48 121 8 10 ];
+        symbol [ drawText %tmp.49 121 11 19 ];
+        %tmp.49 = getv function %tmp.48 :drawText;
+        %tmp.50 = lgetv %w.1;
+        symbol [ w %tmp.50 121 20 21 ];
+        %tmp.51 = 2;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %h.2;
+        symbol [ h %tmp.53 121 27 28 ];
+        %tmp.54 = 0.40;
+        %tmp.55 = mul %tmp.53 %tmp.54;
+        symbol [ Graphics %tmp.56 121 37 45 ];
+        %tmp.56 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.57 121 46 55 ];
+        %tmp.57 = getv %tmp.56 :FONT_TINY;
+        %tmp.58 = "GAP";
+        symbol [ Graphics %tmp.59 121 76 84 ];
+        %tmp.59 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.60 121 85 104 ];
+        %tmp.60 = getv %tmp.59 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.48 %tmp.49(%tmp.52, %tmp.55, %tmp.57, %tmp.58, %tmp.60);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 122 8 ]
+        %tmp.61 = lgetv %dc;
+        symbol [ dc %tmp.61 122 8 10 ];
+        symbol [ drawText %tmp.62 122 11 19 ];
+        %tmp.62 = getv function %tmp.61 :drawText;
+        %tmp.63 = lgetv %w.1;
+        symbol [ w %tmp.63 122 20 21 ];
+        %tmp.64 = 2;
+        %tmp.65 = div %tmp.63 %tmp.64;
+        %tmp.66 = lgetv %h.2;
+        symbol [ h %tmp.66 122 27 28 ];
+        %tmp.67 = 0.51;
+        %tmp.68 = mul %tmp.66 %tmp.67;
+        symbol [ Graphics %tmp.69 122 37 45 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.70 122 46 57 ];
+        %tmp.70 = getv %tmp.69 :FONT_MEDIUM;
+        symbol [ mGapPaceStr %tmp.72 122 59 70 ];
+        %tmp.72 = getv ? :mGapPaceStr;
+        symbol [ Graphics %tmp.73 122 76 84 ];
+        %tmp.73 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.74 122 85 104 ];
+        %tmp.74 = getv %tmp.73 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.61 %tmp.62(%tmp.65, %tmp.68, %tmp.70, %tmp.72, %tmp.74);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 125 8 ]
+        %tmp.75 = lgetv %dc;
+        symbol [ dc %tmp.75 125 8 10 ];
+        symbol [ drawText %tmp.76 125 11 19 ];
+        %tmp.76 = getv function %tmp.75 :drawText;
+        %tmp.77 = lgetv %w.1;
+        symbol [ w %tmp.77 125 20 21 ];
+        %tmp.78 = 0.28;
+        %tmp.79 = mul %tmp.77 %tmp.78;
+        %tmp.80 = lgetv %h.2;
+        symbol [ h %tmp.80 125 30 31 ];
+        %tmp.81 = 0.83;
+        %tmp.82 = mul %tmp.80 %tmp.81;
+        symbol [ Graphics %tmp.83 125 40 48 ];
+        %tmp.83 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.84 125 49 58 ];
+        %tmp.84 = getv %tmp.83 :FONT_TINY;
+        symbol [ mCurrentPaceStr %tmp.86 125 60 75 ];
+        %tmp.86 = getv ? :mCurrentPaceStr;
+        symbol [ Graphics %tmp.87 125 90 98 ];
+        %tmp.87 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.88 125 99 118 ];
+        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.75 %tmp.76(%tmp.79, %tmp.82, %tmp.84, %tmp.86, %tmp.88);
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 126 8 ]
+        %tmp.89 = lgetv %dc;
+        symbol [ dc %tmp.89 126 8 10 ];
+        symbol [ drawText %tmp.90 126 11 19 ];
+        %tmp.90 = getv function %tmp.89 :drawText;
+        %tmp.91 = lgetv %w.1;
+        symbol [ w %tmp.91 126 20 21 ];
+        %tmp.92 = 0.72;
+        %tmp.93 = mul %tmp.91 %tmp.92;
+        %tmp.94 = lgetv %h.2;
+        symbol [ h %tmp.94 126 30 31 ];
+        %tmp.95 = 0.83;
+        %tmp.96 = mul %tmp.94 %tmp.95;
+        symbol [ Graphics %tmp.97 126 40 48 ];
+        %tmp.97 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.98 126 49 58 ];
+        %tmp.98 = getv %tmp.97 :FONT_TINY;
+        symbol [ mGradeStr %tmp.100 126 60 69 ];
+        %tmp.100 = getv ? :mGradeStr;
+        %tmp.101 = " ";
+        %tmp.102 = add %tmp.100 %tmp.101;
+        symbol [ mDeltaStr %tmp.104 126 78 87 ];
+        %tmp.104 = getv ? :mDeltaStr;
+        %tmp.105 = add %tmp.102 %tmp.104;
+        symbol [ Graphics %tmp.106 126 89 97 ];
+        %tmp.106 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.107 126 98 117 ];
+        %tmp.107 = getv %tmp.106 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.89 %tmp.90(%tmp.93, %tmp.96, %tmp.98, %tmp.105, %tmp.107);
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_108_40_127_4_stop:
+    }
+    [ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 129; @symbol_functiondef = [paceStr,129,21,28]; @symbol_param<0> = [secPerMile,129,29,39]; @symbol_param<0>_type<0> = [Float,129,43,48]; @symbol_return<0> = [String,129,53,59]; ]
+    private
+    function paceStr(secPerMile as Float) as String {
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_start:
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 130 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_stop" ]
+        %m.1 = local;
+        symbol [ m %m.1 130 12 13 ];
+        %tmp.1 = lgetv %secPerMile;
+        symbol [ secPerMile %tmp.1 130 17 27 ];
+        %tmp.2 = 60;
+        %tmp.3 = div %tmp.1 %tmp.2;
+        symbol [ toNumber %tmp.4 130 34 42 ];
+        %tmp.4 = getv function %tmp.3 :toNumber;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %m.1 %tmp.5;
+        symbol [ m %m.1 130 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 131 8 ]
+        [ "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_start" "_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_stop" ]
+        %s.2 = local;
+        symbol [ s %s.2 131 12 13 ];
+        %tmp.6 = lgetv %secPerMile;
+        symbol [ secPerMile %tmp.6 131 17 27 ];
+        %tmp.7 = lgetv %m.1;
+        symbol [ m %tmp.7 131 30 31 ];
+        %tmp.8 = 60;
+        %tmp.9 = mul %tmp.7 %tmp.8;
+        %tmp.10 = sub %tmp.6 %tmp.9;
+        symbol [ toNumber %tmp.11 131 38 46 ];
+        %tmp.11 = getv function %tmp.10 :toNumber;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %s.2 %tmp.12;
+        symbol [ s %s.2 131 12 13 ];
+[ "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" 132 8 ]
+        %tmp.13 = lgetv %m.1;
+        symbol [ m %tmp.13 132 15 16 ];
+        symbol [ format %tmp.14 132 17 23 ];
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "%d";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        %tmp.17 = ":";
+        %tmp.18 = add %tmp.16 %tmp.17;
+        %tmp.19 = lgetv %s.2;
+        symbol [ s %tmp.19 132 38 39 ];
+        symbol [ format %tmp.20 132 40 46 ];
+        %tmp.20 = getv function %tmp.19 :format;
+        %tmp.21 = "%02d";
+        %tmp.22 = invoke %tmp.19 %tmp.20(%tmp.21);
+        %tmp.23 = add %tmp.18 %tmp.22;
+        ret %tmp.23;
+_Users_lina_cursor_projects_garmin_gene_source_geneView_mc_129_60_133_4_stop:
+    }
+}
+[ @file = "/Users/lina/cursor_projects/garmin/gene/source/geneView.mc"; @line = 1; ]
+<init> {
+}

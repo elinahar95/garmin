@@ -1,0 +1,8 @@
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <setting propertyKey="@Properties.targetTimeSec" title="@Strings.TargetTimeLabel">
+        <settingConfig type="numeric"/>
+    </setting>
+    <setting propertyKey="@Properties.raceDistanceM" title="@Strings.RaceDistLabel">
+        <settingConfig type="numeric"/>
+    </setting>
+</settings>

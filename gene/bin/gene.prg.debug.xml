@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/lina/cursor_projects/garmin/gene/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="1" lineNum="7" parent="globals/geneView" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="1" lineNum="23" parent="globals/geneView" pc="268435471" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="1" lineNum="24" parent="globals/geneView" pc="268435481" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="2" lineNum="26" parent="globals" pc="268435492" symbol="getApp"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="2" lineNum="27" parent="globals" pc="268435502" symbol="getApp"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="3" lineNum="5" parent="globals/geneApp" pc="268435513" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/bin/gen/006-B3905-00/source/Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435525" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="44" parent="globals/geneView" pc="268435545" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="46" parent="globals/geneView" pc="268435548" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="47" parent="globals/geneView" pc="268435556" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="48" parent="globals/geneView" pc="268435573" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="49" parent="globals/geneView" pc="268435583" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="50" parent="globals/geneView" pc="268435623" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="51" parent="globals/geneView" pc="268435631" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="53" parent="globals/geneView" pc="268435654" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="57" parent="globals/geneView" pc="268435666" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="58" parent="globals/geneView" pc="268435674" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="59" parent="globals/geneView" pc="268435682" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="60" parent="globals/geneView" pc="268435701" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="61" parent="globals/geneView" pc="268435717" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="62" parent="globals/geneView" pc="268435733" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="63" parent="globals/geneView" pc="268435752" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="64" parent="globals/geneView" pc="268435761" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="68" parent="globals/geneView" pc="268435812" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="69" parent="globals/geneView" pc="268435820" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="70" parent="globals/geneView" pc="268435832" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="71" parent="globals/geneView" pc="268435845" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="72" parent="globals/geneView" pc="268435858" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="73" parent="globals/geneView" pc="268435876" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="73" parent="globals/geneView" pc="268435887" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="75" parent="globals/geneView" pc="268435905" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="76" parent="globals/geneView" pc="268435924" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="77" parent="globals/geneView" pc="268435940" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="79" parent="globals/geneView" pc="268435962" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="80" parent="globals/geneView" pc="268435981" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="82" parent="globals/geneView" pc="268436000" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="83" parent="globals/geneView" pc="268436011" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="84" parent="globals/geneView" pc="268436018" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="84" parent="globals/geneView" pc="268436029" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="85" parent="globals/geneView" pc="268436039" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="85" parent="globals/geneView" pc="268436050" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="87" parent="globals/geneView" pc="268436060" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="90" parent="globals/geneView" pc="268436118" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="91" parent="globals/geneView" pc="268436125" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="92" parent="globals/geneView" pc="268436132" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="93" parent="globals/geneView" pc="268436139" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="94" parent="globals/geneView" pc="268436146" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="96" parent="globals/geneView" pc="268436198" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="5" lineNum="97" parent="globals/geneView" pc="268436205" symbol="compute"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="28" parent="globals/geneView" pc="268436247" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="29" parent="globals/geneView" pc="268436250" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="31" parent="globals/geneView" pc="268436262" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="32" parent="globals/geneView" pc="268436281" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="33" parent="globals/geneView" pc="268436300" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="33" parent="globals/geneView" pc="268436306" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="34" parent="globals/geneView" pc="268436324" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="34" parent="globals/geneView" pc="268436330" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="36" parent="globals/geneView" pc="268436348" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="38" parent="globals/geneView" pc="268436380" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="39" parent="globals/geneView" pc="268436391" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="6" lineNum="40" parent="globals/geneView" pc="268436400" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="7" lineNum="125" parent="globals/geneView" pc="268436420" symbol="&lt;globals/geneView/&lt;&gt;paceStr&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="7" lineNum="126" parent="globals/geneView" pc="268436423" symbol="&lt;globals/geneView/&lt;&gt;paceStr&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="7" lineNum="127" parent="globals/geneView" pc="268436436" symbol="&lt;globals/geneView/&lt;&gt;paceStr&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="7" lineNum="128" parent="globals/geneView" pc="268436452" symbol="&lt;globals/geneView/&lt;&gt;paceStr&gt;"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="104" parent="globals/geneView" pc="268436488" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="105" parent="globals/geneView" pc="268436491" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="106" parent="globals/geneView" pc="268436500" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="108" parent="globals/geneView" pc="268436509" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="109" parent="globals/geneView" pc="268436522" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="110" parent="globals/geneView" pc="268436530" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="113" parent="globals/geneView" pc="268436547" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="114" parent="globals/geneView" pc="268436579" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="117" parent="globals/geneView" pc="268436611" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="118" parent="globals/geneView" pc="268436643" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="121" parent="globals/geneView" pc="268436675" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneView.mc" id="8" lineNum="122" parent="globals/geneView" pc="268436710" symbol="onUpdate"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="9" lineNum="12" parent="globals/geneApp" pc="268436758" symbol="onStart"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="10" lineNum="20" parent="globals/geneApp" pc="268436761" symbol="getInitialView"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="10" lineNum="21" parent="globals/geneApp" pc="268436763" symbol="getInitialView"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="11" lineNum="7" parent="globals/geneApp" pc="268436789" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="11" lineNum="8" parent="globals/geneApp" pc="268436791" symbol="initialize"/>
+        <entry filename="/Users/lina/cursor_projects/garmin/gene/source/geneApp.mc" id="12" lineNum="16" parent="globals/geneApp" pc="268436804" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="10" symbol="&lt;globals/geneView/&lt;&gt;mCurrentPaceStr&gt;"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="19" symbol="&lt;globals/geneView/&lt;&gt;mTargetTimeSec&gt;"/>
+        <entry field="true" id="13" symbol="&lt;globals/geneView/&lt;&gt;mEmaReady&gt;"/>
+        <entry field="true" id="8" symbol="&lt;globals/geneView/&lt;&gt;mBufCount&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="22" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry field="true" id="18" symbol="&lt;globals/geneView/&lt;&gt;mRaceDistanceM&gt;"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="11" symbol="&lt;globals/geneView/&lt;&gt;mDeltaStr&gt;"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="5" object="true" symbol="geneApp"/>
+        <entry field="true" id="24" symbol="TargetTimeLabel"/>
+        <entry id="8389137" method="true" symbol="compute"/>
+        <entry field="true" id="9" symbol="&lt;globals/geneView/&lt;&gt;mBufIdx&gt;"/>
+        <entry field="true" id="15" symbol="&lt;globals/geneView/&lt;&gt;mGradeStr&gt;"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="16" symbol="&lt;globals/geneView/&lt;&gt;mPaceEma&gt;"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="21" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry field="true" id="17" symbol="&lt;globals/geneView/&lt;&gt;mPlannedPaceStr&gt;"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="6" object="true" symbol="geneView"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="20" method="true" symbol="&lt;globals/geneView/&lt;&gt;paceStr&gt;"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="14" symbol="&lt;globals/geneView/&lt;&gt;mGapPaceStr&gt;"/>
+        <entry field="true" id="7" symbol="&lt;globals/geneView/&lt;&gt;mAltBuf&gt;"/>
+        <entry field="true" id="12" symbol="&lt;globals/geneView/&lt;&gt;mDistBuf&gt;"/>
+        <entry field="true" id="23" symbol="RaceDistLabel"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268436246" name="info" stackId="1" startPc="268435545"/>
+        <entry endPc="268436245" name="speed" stackId="2" startPc="268435548"/>
+        <entry endPc="268435650" name="raw" stackId="3" startPc="268435573"/>
+        <entry endPc="268436245" name="dist" stackId="4" startPc="268435548"/>
+        <entry endPc="268436245" name="timer" stackId="5" startPc="268435548"/>
+        <entry endPc="268435808" name="elapsedSec" stackId="6" startPc="268435701"/>
+        <entry endPc="268435808" name="expectedDist" stackId="7" startPc="268435701"/>
+        <entry endPc="268435808" name="deltaSec" stackId="8" startPc="268435701"/>
+        <entry endPc="268435808" name="dInt" stackId="9" startPc="268435701"/>
+        <entry endPc="268436245" name="alt" stackId="10" startPc="268435548"/>
+        <entry endPc="268436239" name="newestIdx" stackId="11" startPc="268435924"/>
+        <entry endPc="268436239" name="oldestIdx" stackId="12" startPc="268435924"/>
+        <entry endPc="268436239" name="deltaAlt" stackId="13" startPc="268435924"/>
+        <entry endPc="268436239" name="deltaDist" stackId="14" startPc="268435924"/>
+        <entry endPc="268436236" name="grade" stackId="15" startPc="268436011"/>
+        <entry endPc="268436236" name="i2" stackId="16" startPc="268436011"/>
+        <entry endPc="268436236" name="i3" stackId="17" startPc="268436011"/>
+        <entry endPc="268436236" name="i4" stackId="18" startPc="268436011"/>
+        <entry endPc="268436236" name="i5" stackId="19" startPc="268436011"/>
+        <entry endPc="268436236" name="c" stackId="20" startPc="268436011"/>
+        <entry endPc="268436418" name="t" stackId="1" startPc="268436250"/>
+        <entry endPc="268436418" name="d" stackId="2" startPc="268436250"/>
+        <entry endPc="268436418" name="i" stackId="3" startPc="268436391"/>
+        <entry arg="true" endPc="268436487" name="secPerMile" stackId="1" startPc="268436420"/>
+        <entry endPc="268436487" name="m" stackId="2" startPc="268436423"/>
+        <entry endPc="268436487" name="s" stackId="3" startPc="268436423"/>
+        <entry arg="true" endPc="268436757" name="dc" stackId="1" startPc="268436488"/>
+        <entry endPc="268436756" name="w" stackId="2" startPc="268436491"/>
+        <entry endPc="268436756" name="h" stackId="3" startPc="268436491"/>
+    </localVars>
+    <deviceInfo deviceVersion="5c7ae9cf907f88c116a91dc4ffd75be9b5b7d2e9" partNumber="006-B3905-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="RaceDistLabel"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="TargetTimeLabel"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="49" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/geneView" offset="116" parentId="globals" symbolId="geneView" type="class"/>
+        <dataEntry label="globals/geneApp" offset="304" parentId="globals" symbolId="geneApp" type="class"/>
+        <dataEntry label="globals/Rez" offset="375" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="419" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="454" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435491" name="&lt;init&gt;" parent="geneView" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435512" name="getApp" startPc="268435492">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435524" name="&lt;init&gt;" parent="geneApp" startPc="268435513">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435544" name="&lt;init&gt;" parent="Rez" startPc="268435525">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436246" name="compute" parent="geneView" startPc="268435545">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436419" name="initialize" parent="geneView" startPc="268436247">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436487" name="&lt;globals/geneView/&lt;&gt;paceStr&gt;" parent="geneView" startPc="268436420">
+            <param id="secPerMile"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436757" name="onUpdate" parent="geneView" startPc="268436488">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436760" name="onStart" parent="geneApp" startPc="268436758">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436788" name="getInitialView" parent="geneApp" startPc="268436761">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436803" name="initialize" parent="geneApp" startPc="268436789">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436806" name="onStop" parent="geneApp" startPc="268436804">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

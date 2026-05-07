@@ -1,0 +1,6 @@
+<properties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <!-- Target finish time in seconds (default 3600 = 1h, e.g. 10k at 6:00/km) -->
+    <property id="targetTimeSec" type="number">3600</property>
+    <!-- Race distance in metres (default 10000 = 10 km) -->
+    <property id="raceDistanceM" type="number">10000</property>
+</properties>
